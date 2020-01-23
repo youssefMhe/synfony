@@ -1,0 +1,647 @@
+<?php
+
+session_start();
+
+?><html>
+ <head>
+     <meta charset="UTF-8">
+     <title></title>
+     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/price-range.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+  	
+  	
+  	
+  	
+  	
+  	<link rel="stylesheet" type="text/css" href="commande.css">
+  	
+  	<style>
+        
+     </style>
+ </head>
+ <body>
+    
+    
+    <?php 
+     if(array_key_exists('errors',$_SESSION)):
+     
+     ?>
+    <center>
+     <div style="width:50%;">
+     <div class="alert alert-danger">
+  <strong>!</strong> <?= implode('<br>',$_SESSION['errors']); ?>
+
+</div>
+    </div>
+    </center>
+    <?php unset($_SESSION['errors']); endif; ?>
+  
+     
+     <div class="lentinf">
+     <center>
+     
+     
+      <form method="post" action="commandelendomophp.php">
+     
+     
+     <table style="color: black;">
+         <tbody>
+             <tr>
+                 <td colspan="3">LOGO</td>
+             </tr>
+             <tr id="prodnametent">
+                 <td colspan="3">PRODUT NAME</td>
+             </tr>
+             
+           
+             
+             <tr>
+                 <td>Critéres</td>
+                 <td>Oeil Gauche</td>
+                 <td>Oeil Droit</td>
+                 
+             </tr>
+             
+             <tr>
+                 <td>Rayon (BC)</td>
+                 <td>
+                     <input type="text" name="rayonog" >
+                 </td>
+                 <td><input type="text" name="rayonod" ></td>
+             </tr>
+             
+             <tr>
+                 <td>Diamétre (DIA)</td>
+                 <td><input type="text" name="diametreog" ></td>
+                 <td><input type="text" name="diametreod" ></td>
+             </tr>
+             
+             <tr>
+                 <td>Cylindre</td>
+                 <td>
+                 <select name="cylindreog">
+                     <option value="">
+                         choisissez
+                     </option>
+                     <option value="-2.25">
+                         -2.25
+                     </option>
+                     <option value="-1.75">
+                         -1.75
+                     </option>
+                        <option value="-1.25">
+                         -1.25
+                     </option>
+                       <option value="-0.75">
+                         -0.75
+                     </option>
+                 </select>
+                 </td>
+                 <td>
+                 <select name="cylindreod">
+                     <option value="">
+                         choisissez
+                     </option>
+                     <option value="-2.25">
+                         -2.25
+                     </option>
+                     <option value="-1.75">
+                         -1.75
+                     </option>
+                        <option value="-1.25">
+                         -1.25
+                     </option>
+                       <option value="-0.75">
+                         -0.75
+                     </option>
+                 </select>
+                 </td>
+             </tr>
+             
+             <tr>
+                 <td>Axe</td>
+                 
+                 <td>
+                 <select name="axeog">
+                     <option value="">
+                         choisissez
+                     </option>
+                     <option value=" 10°">
+                         10°
+                     </option>
+                     <option value=" 20°">
+                         20°
+                     </option>
+                        <option value=" 30°">
+                         30°
+                     </option>
+                        <option value=" 40°">
+                         40°
+                     </option>
+                     <option value=" 50°">
+                         50°
+                     </option>
+                     <option value=" 60°">
+                         60°
+                     </option>
+                     <option value=" 70°">
+                         70°
+                     </option>
+                     <option value=" 80°">
+                         80°
+                     </option>
+                     <option value=" 90°">
+                         90°
+                     </option>
+                     <option value=" 100°">
+                         100°
+                     </option>
+                     <option value=" 110°">
+                         110°
+                     </option>
+                     <option value=" 120°">
+                         120°
+                     </option>
+                     <option value=" 130°">
+                         130°
+                     </option>
+                     <option value=" 140°">
+                         140°
+                     </option>
+                     <option value=" 150°">
+                         150°
+                     </option>
+                     <option value=" 160°">
+                         160°
+                     </option>
+                     <option value=" 170°">
+                         170°
+                     </option>
+                     <option value=" 0°\180°">
+                         0°\180°
+                     </option>
+                     
+                 </select>
+                 </td>
+                 
+                 
+                 <td>
+                 <select name="axeod">
+                     <option value="">
+                         choisissez
+                     </option>
+                     <option value=" 10°">
+                         10°
+                     </option>
+                     <option value=" 20°">
+                         20°
+                     </option>
+                        <option value=" 30°">
+                         30°
+                     </option>
+                        <option value=" 40°">
+                         40°
+                     </option>
+                     <option value=" 50°">
+                         50°
+                     </option>
+                     <option value=" 60°">
+                         60°
+                     </option>
+                     <option value=" 70°">
+                         70°
+                     </option>
+                     <option value=" 80°">
+                         80°
+                     </option>
+                     <option value=" 90°">
+                         90°
+                     </option>
+                     <option value=" 100°">
+                         100°
+                     </option>
+                     <option value=" 110°">
+                         110°
+                     </option>
+                     <option value=" 120°">
+                         120°
+                     </option>
+                     <option value=" 130°">
+                         130°
+                     </option>
+                     <option value=" 140°">
+                         140°
+                     </option>
+                     <option value=" 150°">
+                         150°
+                     </option>
+                     <option value=" 160°">
+                         160°
+                     </option>
+                     <option value=" 170°">
+                         170°
+                     </option>
+                     <option value=" 0°\180°">
+                         0°\180°
+                     </option>
+                     
+                 </select>
+                 </td>
+             </tr>
+             
+             <tr>
+                <td>Sphere (PWR)</td>
+                <td>
+                <select name="sphereog"> 
+                <option value="">
+                         choisissez
+                     </option>
+                     <option value="6.00">
+                         6.00
+                     </option>
+                    <option value="5.75">
+                         5.75
+                     </option>
+                        <option value="5.50">
+                         5.50
+                     </option>
+                        <option value="5.25">
+                         5.25
+                     </option>
+                     <option value="5.00">
+                         5.00
+                     </option>
+                     <option value="4.75">
+                         4.75
+                     </option>
+                        <option value="4.50">
+                         4.50
+                     </option>
+                        <option value="4.25">
+                         4.25
+                     </option>
+                     <option value="4.00">
+                         4.00
+                     </option>
+                      <option value="3.75">
+                         3.75
+                     </option>
+                        <option value="3.50">
+                         3.50
+                     </option>
+                        <option value="3.25">
+                         3.25
+                     </option>
+                     <option value="3.00">
+                         3.00
+                     </option>
+                      <option value="2.75">
+                         2.75
+                     </option>
+                        <option value="2.50">
+                         2.50
+                     </option>
+                        <option value="2.25">
+                         2.25
+                     </option>
+                     <option value="2.00">
+                         2.00
+                     </option>
+                      <option value="1.75">
+                         1.75
+                     </option>
+                        <option value="1.50">
+                         1.50
+                     </option>
+                        <option value="1.25">
+                         1.25
+                     </option>
+                     <option value="1.00">
+                         1.00
+                     </option>
+                       <option value="0.75">
+                         0.75
+                     </option>
+                        <option value="0.50">
+                         0.50
+                     </option>
+                        <option value="-0.5">
+                         -0.5
+                     </option>
+                     <option value="-0.75">
+                         -0.75
+                     </option>
+                      <option value="-1">
+                        -1
+                     </option>
+                        <option value="-1.25">
+                         -1.25
+                     </option>
+                        <option value="-1.50">
+                         -1.5
+                     </option>
+                     <option value="-1.75">
+                         -1.75
+                     </option>
+                     <option value="-2">
+                        -2
+                     </option>
+                        <option value="-2.25">
+                         -2.25
+                     </option>
+                        <option>
+                         -2.5
+                     </option>
+                     <option value="-2.75">
+                         -2.75
+                     </option>
+                     <option value="-3">
+                        -3
+                     </option>
+                        <option value="-3.25">
+                         -3.25
+                     </option>
+                        <option value="-3.5">
+                         -3.5
+                     </option>
+                     <option value="-3.75">
+                         -3.75
+                     </option>
+                     <option value="-4">
+                        -4
+                     </option>
+                        <option value="-4.25">
+                         -4.25
+                     </option>
+                        <option value="-4.5">
+                         -4.5
+                     </option>
+                     <option value="-4.75">
+                         -4.75
+                     </option>
+                     <option value="-5">
+                        -5
+                     </option>
+                        <option value="-5.25">
+                         -5.25
+                     </option>
+                        <option value="-5.5">
+                         -5.5
+                     </option>
+                     <option value="-5.75">
+                         -5.75
+                     </option>
+                     <option value="-6">
+                        -6
+                     </option>
+                        <option value="-6.5">
+                         -6.5
+                     </option>
+                    
+                     <option value="-7">
+                        -7
+                     </option>
+                         <option value="-7.5">
+                         -7.5
+                     </option>
+                     
+                      <option value="-8">
+                        -8
+                     </option>
+                        <option value="-8.5">
+                         -8.5
+                     </option>
+                        <option value="-9">
+                         -9
+                     </option>
+                     <option value="-9.5">
+                         -9.5
+                     </option>
+                     <option value="-10.00">
+                         -10.00
+                     </option>
+                </select>
+                </td>
+                
+                
+                
+                <td>
+                <select name="sphereod"> 
+                <option value="">
+                         choisissez
+                     </option>
+                     <option value="6.00">
+                         6.00
+                     </option>
+                     <option value="5.75">
+                         5.75
+                     </option>
+                        <option value="5.50">
+                         5.50
+                     </option>
+                        <option value="5.25">
+                         5.25
+                     </option>
+                     <option value="5.00">
+                         5.00
+                     </option>
+                     <option value="4.75">
+                         4.75
+                     </option>
+                        <option value="4.50">
+                         4.50
+                     </option>
+                        <option value="4.25">
+                         4.25
+                     </option>
+                     <option value="4.00">
+                         4.00
+                     </option>
+                     <option value="3.75">
+                         3.75
+                     </option>
+                        <option value="3.50">
+                         3.50
+                     </option>
+                        <option value="3.25">
+                         3.25
+                     </option>
+                     <option value="3.00">
+                         3.00
+                     </option>
+                      <option value="2.75">
+                         2.75
+                     </option>
+                        <option value="2.5">
+                         2.50
+                     </option>
+                        <option value="2.25">
+                         2.25
+                     </option>
+                     <option value="2.00">
+                         2.00
+                     </option>
+                      <option value="1.75">
+                         1.75
+                     </option>
+                        <option value="1.50">
+                         1.50
+                     </option>
+                        <option value="1.25">
+                         1.25
+                     </option>
+                     <option value="1.00">
+                         1.00
+                     </option>
+                      <option value="0.75">
+                         0.75
+                     </option>
+                        <option value="0.50">
+                         0.50
+                     </option>
+                        <option value="-0.50">
+                         -0.5
+                     </option>
+                     <option value="-0.75">
+                         -0.75
+                     </option>
+                      <option value="-1">
+                        -1
+                     </option>
+                        <option value="-1.25">
+                         -1.25
+                     </option>
+                        <option value="-1.50">
+                         -1.5
+                     </option>
+                     <option value="-1.75">
+                         -1.75
+                     </option>
+                     <option value="-2">
+                        -2
+                     </option>
+                        <option value="-2.25">
+                         -2.25
+                     </option>
+                        <option value="-2.50">
+                         -2.5
+                     </option>
+                     <option value="-2.75">
+                         -2.75
+                     </option>
+                     <option value="-3">
+                        -3
+                     </option>
+                        <option value="-3.25">
+                         -3.25
+                     </option>
+                        <option value="-3.5">
+                         -3.5
+                     </option>
+                     <option value="-3.75">
+                         -3.75
+                     </option>
+                     <option value="-4">
+                        -4
+                     </option>
+                        <option value="-4.25">
+                         -4.25
+                     </option>
+                        <option value="-4.50">
+                         -4.5
+                     </option>
+                     <option value="-4.75">
+                         -4.75
+                     </option>
+                     <option value="-5">
+                        -5
+                     </option>
+                        <option value="-5.25">
+                         -5.25
+                     </option>
+                        <option value="-5.50">
+                         -5.5
+                     </option>
+                     <option value="-5.75">
+                         -5.75
+                     </option>
+                     <option value="-6">
+                        -6
+                     </option>
+                        <option value="-6.50">
+                         -6.5
+                     </option>
+                    
+                     <option value="-7">
+                        -7
+                     </option>
+                        <option value="-7.5">
+                         -7.5
+                     </option>
+                     
+                     <option value="-8">
+                        -8
+                     </option>
+                        <option value="-8.5">
+                         -8.5
+                     </option>
+                        <option value="-9">
+                         -9
+                     </option>
+                     <option value="-9.5">
+                         -9.5
+                     </option>
+                     <option value="-10.00">
+                         -10.00
+                     </option>
+                </select>
+                </td>
+             </tr>
+             
+             <tr>
+                 <td>Quantité</td>
+                 <td> <input type="number" name="moqteg"> </td>
+                 <td><input type="number"  name="moqted"></td>
+             </tr>
+             
+             <tr>
+                 <td style="background-color: orangered;"><strong>Prix unitaire  :</strong> </td>
+                
+                 <td style="background-color:wheat;" colspan="2"><strong><?php  ?></strong> </td>
+             </tr>
+             <tr>
+                
+                 <td colspan="3">
+                     <input type="submit" name="ajouterpan" value="Ajouter au panier" id="ajoutlent" style="height: 200%; width:100%; border: none;" >
+                 </td>
+             </tr>
+             
+             
+         </tbody>
+     </table>
+    </form>
+     </center>
+     </div>
+     
+     
+     
+     
+     
+     
+     
+ </body>
+ </html>
